@@ -128,12 +128,14 @@ def plot_shapes(shapes: dict) -> None:
     :return: None
     """
     res, count = zip(*list(sorted(shapes.items(), key=lambda x: x[1])))
-    min_diameter = 1
-    # max_diameter = int((max(max(res)) - min(min(res))) * 0.1)
-    max_diameter = int((max(res) - min(res)) * 0.1)
-    a = (max_diameter - min_diameter) / (max(count) - min(count))
-    b = min_diameter - a * min(count)
-    diameters = [c * a + b for c in count]
+    if len(res) > 1:
+        min_diameter = 1
+        max_diameter = int((max(max(res)) - min(min(res))) * 0.1)
+        a = (max_diameter - min_diameter) / (max(count) - min(count))
+        b = min_diameter - a * min(count)
+        diameters = [c * a + b for c in count]
+    else:
+        diameters = [50]
     points = plt.scatter(*zip(*res), s=diameters, alpha=0.5, c='deepskyblue', edgecolors='mediumblue')
 
     def on_hover(event):
