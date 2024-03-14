@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "imgshape"
+version = "1.0.0"
+description = "The program checks the shapes of images in the given directory and plots the distribution of these shapes."
+authors = ["Piotr Gawron <gawron.pio@gmail.com>"]
+readme = "README.md"
+license = "MIT License"
+repository = "https://github.com/gawronpio/imgshape.git"
+homepage = "https://github.com/gawronpio/imgshape.git"
+classifiers = [
+        "Development Status :: 4 - Beta",
+        "Environment :: Console",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.11"
+]
+packages = [{include = "imgshape"}]
+include = [
+    "CHANGELOG.md",
+    "README.md",
+    "imgshape",
+]
+[tool.poetry.scripts]
+imgshape = "imgshape.imgshape:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+filetype = "^1.2.0"
+matplotlib = "^3.8.3"
+pillow = "^10.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
