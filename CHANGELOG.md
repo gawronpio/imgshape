@@ -6,10 +6,14 @@ and this project adheres to modified [Semantic Versioning](http://semver.org/spe
 
 ## [UNRELEASED]
 ### Added (unreleased)
-- initial version of the project
+- 
 
 ### Changed (unreleased)
 - 
 
 ### Fixed (unreleased)
 - 
+
+## [1.0.0]
+### Added
+- initial version of the project
